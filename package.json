@@ -1,0 +1,48 @@
+{
+  "name": "github-plays-snake",
+  "version": "1.0.0",
+  "description": "One snake. The entire internet controls it. A community-controlled Snake game that lives inside a GitHub README.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx watch src/dev/server.ts",
+    "start:local": "tsx src/dev/server.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:dynamo": "DYNAMO_ENDPOINT=http://localhost:8000 vitest run tests/integration/dynamodb.test.ts",
+    "test:browser": "tsx tests/browser/ismap-browser.ts",
+    "screenshots": "tsx scripts/screenshots.ts",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p infra/tsconfig.json",
+    "build": "tsx scripts/build.ts",
+    "cdk": "cdk",
+    "synth": "npm run build && cdk synth",
+    "diff": "npm run build && cdk diff",
+    "deploy": "npm run build && cdk deploy --require-approval broadening --outputs-file cdk-outputs.json",
+    "admin": "tsx scripts/admin.ts",
+    "destroy": "cdk destroy",
+    "live-check": "tsx scripts/live-check.ts",
+    "snippet": "tsx scripts/snippet.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1164.0",
+    "@aws-sdk/lib-dynamodb": "^3.1164.0"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-lambda": "^3.1164.0",
+    "@types/aws-lambda": "^8.10.164",
+    "@types/node": "^26.6.6",
+    "aws-cdk": "^2.1148.0",
+    "aws-cdk-lib": "^2.275.0",
+    "constructs": "^10.8.1",
+    "esbuild": "^0.28.2",
+    "fast-xml-parser": "^5.12.0",
+    "puppeteer-core": "^25.16.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}
