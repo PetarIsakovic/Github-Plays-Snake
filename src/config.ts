@@ -36,7 +36,7 @@ export function validateProfileUrl(url: string, allowLocal: boolean): string {
 export function loadConfig(env: NodeJS.ProcessEnv = process.env, opts: { allowLocalRedirect?: boolean } = {}): AppConfig {
   const gameId = env.GAME_ID ?? "global";
   if (!/^[a-z0-9:_-]{1,64}$/i.test(gameId)) throw new Error(`Invalid GAME_ID=${JSON.stringify(gameId)}`);
-  const roundSeconds = int(env, "ROUND_SECONDS", 120, 5, 86_400);
+  const roundSeconds = int(env, "ROUND_SECONDS", 60, 5, 86_400);
   return {
     gameId,
     engine: {

@@ -2,7 +2,7 @@
 
 One snake. Everyone controls it.
 
-A snake game that lives inside a GitHub README. Anyone who visits can click an arrow to vote. Every 2 minutes the snake moves the way most people voted.
+A snake game that lives inside a GitHub README. Anyone who visits can click an arrow to vote. Every minute the snake moves the way most people voted.
 
 <p align="center"><img src="docs/images/board-dark.png" width="420" alt="GitHub Plays Snake board"></p>
 

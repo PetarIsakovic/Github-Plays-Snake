@@ -28,7 +28,7 @@ new SnakeStack(app, setting("STACK_NAME", "GitHubPlaysSnake"), {
   env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION ?? "us-east-1" },
   description: "GitHub Plays Snake: community-controlled Snake inside a GitHub README",
   profileUrl,
-  roundSeconds: num("ROUND_SECONDS", 120),
+  roundSeconds: num("ROUND_SECONDS", 60),
   boardCols: num("BOARD_COLS", 12),
   boardRows: num("BOARD_ROWS", 9),
   votesPerIpPerRound: num("VOTES_PER_IP_PER_ROUND", 12),
